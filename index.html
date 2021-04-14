@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>CFD3</title>
+    <meta name="title" content="" />
+    <meta name="description" content="" />
+    <meta property="og:locale" content="vi" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Trang chủ" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="stylesheet" href="dest/stylelibs.min.css">
+    <link rel="stylesheet" href="dest/style.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="preloder">
+        <div class="loader"></div>
+        <img src="data:image/png;base64,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"
+            alt="">
+    </div>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="header__top ">
+                    <div class="header__top--left ">
+                        <span>Chat with us</span>
+                        <span>+420 336 775 664</span>
+                        <span>info@freshnesecom.com</span>
+                    </div>
+                    <div class="header__top--right">
+                        <a href="#">Về chúng tôi</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row header__mid">
+                <div class="logo ">
+                    <a href=""><img src="img/logo.svg" alt="logo"></a>
+                </div>
+                <div class="search ">
+                    <div class="search-container">
+                        <form>
+                            <input type="text" placeholder="Search Products, categories ..." name="search">
+                        </form>
+                        <button type="submit"><i class="demo-icon icon-search"></i></button>
+                    </div>
+                </div>
+                <div class="icons ">
+                    <a href=""><i class="demo-icon icon-adult"></i></a>
+                    <a href=""><i class="demo-icon icon-shopping-basket"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <main class="homepage">
+        <div class="banner ">
+            <img src="img/baner.jpg" alt="banner">
+            <div class="banner__text">
+                <span>new trend</span>
+                <b>collusion</b>
+                <p>An exclusive selection of this season's trends.</p>
+
+                <div class="banner__btn">
+                    <a href=""><span>discover</span></a>
+                    <a href=""><span>shop now</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 homepage__left">
+                    <div class="new-products">
+
+                        <div class="title">
+                            <h2>Sản phẩm mới</h2>
+                        </div>
+                        <div class="details">
+                            <div class="details__card">
+                                <a href="" alt="">
+                                    <div class="details__card--img">
+                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
+                                            alt="VÒNG ĐÁ AQUAMARINE">
+                                        <i class="demo-icon icon-search"></i>
+
+                                    </div>
+                                </a>
+
+                                <div class="details__card--infor">
+                                    <h3>
+                                        <a href="" alt="">
+                                            Vòng đá mặt trăng
+                                        </a>
+                                    </h3>
+                                    <span class="label">
+                                        Xem chi tiết
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="details__card">
+                                <a href="" alt="">
+                                    <div class="details__card--img">
+                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
+                                            alt="VÒNG ĐÁ AQUAMARINE">
+                                        <i class="demo-icon icon-search"></i>
+
+                                    </div>
+                                </a>
+
+                                <div class="details__card--infor">
+                                    <h3>
+                                        <a href="" alt="">
+                                            Vòng đá mặt trăng
+                                        </a>
+                                    </h3>
+                                    <span class="label">
+                                        Xem chi tiết
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="details__card">
+                                <a href="" alt="">
+                                    <div class="details__card--img">
+                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
+                                            alt="VÒNG ĐÁ AQUAMARINE">
+                                        <i class="demo-icon icon-search"></i>
+
+                                    </div>
+                                </a>
+
+                                <div class="details__card--infor">
+                                    <h3>
+                                        <a href="" alt="">
+                                            Vòng đá mặt trăng
+                                        </a>
+                                    </h3>
+                                    <span class="label">
+                                        Xem chi tiết
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="details__card">
+                                <a href="" alt="">
+                                    <div class="details__card--img">
+                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
+                                            alt="VÒNG ĐÁ AQUAMARINE">
+                                        <i class="demo-icon icon-search"></i>
+
+                                    </div>
+                                </a>
+
+                                <div class="details__card--infor">
+                                    <h3>
+                                        <a href="" alt="">
+                                            Vòng đá mặt trăng
+                                        </a>
+                                    </h3>
+                                    <span class="label">
+                                        Xem chi tiết
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="details__card">
+                                <a href="" alt="">
+                                    <div class="details__card--img">
+                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
+                                            alt="VÒNG ĐÁ AQUAMARINE">
+                                        <i class="demo-icon icon-search"></i>
+
+                                    </div>
+                                </a>
+
+                                <div class="details__card--infor">
+                                    <h3>
+                                        <a href="" alt="">
+                                            Vòng đá mặt trăng
+                                        </a>
+                                    </h3>
+                                    <span class="label">
+                                        Xem chi tiết
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="details__card">
+                                <a href="" alt="">
+                                    <div class="details__card--img">
+                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
+                                            alt="VÒNG ĐÁ AQUAMARINE">
+                                        <i class="demo-icon icon-search"></i>
+
+                                    </div>
+                                </a>
+
+                                <div class="details__card--infor">
+                                    <h3>
+                                        <a href="" alt="">
+                                            Vòng đá mặt trăng
+                                        </a>
+                                    </h3>
+                                    <span class="label">
+                                        Xem chi tiết
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="details__card">
+                                <a href="" alt="">
+                                    <div class="details__card--img">
+                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
+                                            alt="VÒNG ĐÁ AQUAMARINE">
+                                        <i class="demo-icon icon-search"></i>
+
+                                    </div>
+                                </a>
+
+                                <div class="details__card--infor">
+                                    <h3>
+                                        <a href="" alt="">
+                                            Vòng đá mặt trăng
+                                        </a>
+                                    </h3>
+                                    <span class="label">
+                                        Xem chi tiết
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="details__card">
+                                <a href="" alt="">
+                                    <div class="details__card--img">
+                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
+                                            alt="VÒNG ĐÁ AQUAMARINE">
+                                        <i class="demo-icon icon-search"></i>
+
+                                    </div>
+                                </a>
+
+                                <div class="details__card--infor">
+                                    <h3>
+                                        <a href="" alt="">
+                                            Vòng đá mặt trăng
+                                        </a>
+                                    </h3>
+                                    <span class="label">
+                                        Xem chi tiết
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="new-products">
+
+                        <div class="title">
+                            <h2>Sản phẩm mới</h2>
+                        </div>
+                        <div class="details">
+                            <div class="details__card">
+                                <a href="" alt="">
+                                    <div class="details__card--img">
+                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
+                                            alt="VÒNG ĐÁ AQUAMARINE">
+                                        <i class="demo-icon icon-search"></i>
+
+                                    </div>
+                                </a>
+
+                                <div class="details__card--infor">
+                                    <h3>
+                                        <a href="" alt="">
+                                            Vòng đá mặt trăng
+                                        </a>
+                                    </h3>
+                                    <span class="label">
+                                        Xem chi tiết
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="details__card">
+                                <a href="" alt="">
+                                    <div class="details__card--img">
+                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
+                                            alt="VÒNG ĐÁ AQUAMARINE">
+                                        <i class="demo-icon icon-search"></i>
+
+                                    </div>
+                                </a>
+
+                                <div class="details__card--infor">
+                                    <h3>
+                                        <a href="" alt="">
+                                            Vòng đá mặt trăng
+                                        </a>
+                                    </h3>
+                                    <span class="label">
+                                        Xem chi tiết
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="details__card">
+                                <a href="" alt="">
+                                    <div class="details__card--img">
+                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
+                                            alt="VÒNG ĐÁ AQUAMARINE">
+                                        <i class="demo-icon icon-search"></i>
+
+                                    </div>
+                                </a>
+
+                                <div class="details__card--infor">
+                                    <h3>
+                                        <a href="" alt="">
+                                            Vòng đá mặt trăng
+                                        </a>
+                                    </h3>
+                                    <span class="label">
+                                        Xem chi tiết
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="details__card">
+                                <a href="" alt="">
+                                    <div class="details__card--img">
+                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
+                                            alt="VÒNG ĐÁ AQUAMARINE">
+                                        <i class="demo-icon icon-search"></i>
+
+                                    </div>
+                                </a>
+
+                                <div class="details__card--infor">
+                                    <h3>
+                                        <a href="" alt="">
+                                            Vòng đá mặt trăng
+                                        </a>
+                                    </h3>
+                                    <span class="label">
+                                        Xem chi tiết
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="details__card">
+                                <a href="" alt="">
+                                    <div class="details__card--img">
+                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
+                                            alt="VÒNG ĐÁ AQUAMARINE">
+                                        <i class="demo-icon icon-search"></i>
+
+                                    </div>
+                                </a>
+
+                                <div class="details__card--infor">
+                                    <h3>
+                                        <a href="" alt="">
+                                            Vòng đá mặt trăng
+                                        </a>
+                                    </h3>
+                                    <span class="label">
+                                        Xem chi tiết
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="details__card">
+                                <a href="" alt="">
+                                    <div class="details__card--img">
+                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
+                                            alt="VÒNG ĐÁ AQUAMARINE">
+                                        <i class="demo-icon icon-search"></i>
+
+                                    </div>
+                                </a>
+
+                                <div class="details__card--infor">
+                                    <h3>
+                                        <a href="" alt="">
+                                            Vòng đá mặt trăng
+                                        </a>
+                                    </h3>
+                                    <span class="label">
+                                        Xem chi tiết
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="details__card">
+                                <a href="" alt="">
+                                    <div class="details__card--img">
+                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
+                                            alt="VÒNG ĐÁ AQUAMARINE">
+                                        <i class="demo-icon icon-search"></i>
+
+                                    </div>
+                                </a>
+
+                                <div class="details__card--infor">
+                                    <h3>
+                                        <a href="" alt="">
+                                            Vòng đá mặt trăng
+                                        </a>
+                                    </h3>
+                                    <span class="label">
+                                        Xem chi tiết
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="details__card">
+                                <a href="" alt="">
+                                    <div class="details__card--img">
+                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
+                                            alt="VÒNG ĐÁ AQUAMARINE">
+                                        <i class="demo-icon icon-search"></i>
+
+                                    </div>
+                                </a>
+
+                                <div class="details__card--infor">
+                                    <h3>
+                                        <a href="" alt="">
+                                            Vòng đá mặt trăng
+                                        </a>
+                                    </h3>
+                                    <span class="label">
+                                        Xem chi tiết
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pagination">
+                            <a href="#">&laquo;</a>
+                            <a href="#">1</a>
+                            <a class="active" href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#">6</a>
+                            <a href="#">&raquo;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 homepage__right">
+                    <div class="author-card">
+                        <h2 class="title">
+                            Liên hệ
+                        </h2>
+                        <div class="phone">
+                            <span>0123456789</span>
+                        </div>
+                        <div class="facebook">
+                            <span>0123456789</span>
+                        </div>
+                        <div class="email">
+                            <span>0123456789</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="new-products">
+
+            </div>
+        </div>
+
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class=" footer__wrap">
+                    <div>
+                        <h3>CHĂM SÓC KHÁCH HÀNG</h3>
+                        <a href="/">Trung Tâm Trợ Giúp</a>
+                        <a href="/">Hướng Dẫn Mua Hàng</a>
+                        <a href="/">Hướng Dẫn Bán Hàng</a>
+                        <a href="/">Thanh Toán</a>
+                    </div>
+                    <div>
+                        <h3>VỀ CHÚNG TÔI</h3>
+                        <a href="/">Giới Thiệu Về Chúng Tôi</a>
+                        <a href="/">Tuyển Dụng</a>
+                        <a href="/">Điều khoản</a>
+                    </div>
+                    <div>
+                        <h3>THEO DÕI CHÚNG TÔI TRÊN</h3>
+                        <a href="/">
+                            <i class="demo-icon icon-facebook"></i> Facebook
+                        </a>
+                        <a href="/">
+                            <i class="demo-icon icon-twitter"></i> Twitter
+                        </a>
+                        <a href="/">
+                            <i class="demo-icon icon-instagram"></i>
+                            Instagram
+                        </a>
+                    </div>
+                    <div>
+                        <h3>THANH TOÁN</h3>
+                        <a href="/">Visa</a>
+                        <a href="/">Master Card</a>
+                        <a href="/">ZaloPay</a>
+                        <a href="/">MoMo</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="copyright col-lg-12">
+                    <p>© 2021 Myshop. Tất cả các quyền được bảo lưu.</p>
+                    <p>Quốc gia & Khu vực: Singapore Indonesia Đài Loan Thái Lan Malaysia Việt Nam Philippines
+                        Brazil</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="dest/jsmain.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
