@@ -18,9 +18,16 @@
 
     <link rel="stylesheet" href="dest/stylelibs.min.css">
     <link rel="stylesheet" href="dest/style.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <div id="preloder">
+        <div class="loader"></div>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlApw1AAAAdVBMVEX///8CAgMJCQoeHh/u7u7V1dX6+vrh4eF9fX25ublhYWG/v796enoXFxhoaGgZGRohISKsrKyJiYqVlZadnZ709PRdXV10dHQ9PT5OTk/FxcU4ODmmpqe1tbUlJSbf398uLi9HR0hWVlfMzMwxMTKOjo9JSUovc1ulAAAFzElEQVR4nO2c7XayMAyAJyDfHyoCypyKc7v/S3yVuQlpGsprAT0nz09balrSJk1D394YhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmGYF8FZhv52czQNIzlutn64dBRqJ4ZhKtQeGttzt9FMIPp2A6x64H5jtbeuZ48t+Y88MSLOL0lRtmuXRSKvHcVoj4dkXphyeX5YhH/q4YSLrtpmMR9T/FOXPDVGXHfBiQ2l6qexujDPleS5dUFV/Cv5GF2wfGV56i6oi3/Ft4aWf0nMXB1Ey0HFt9S157/JB3wJXufSowPTG0r+1RjiX1kNI38xlvyzWTGA+Lba2q+Jk3bvwtqMKf9sttE8le33jj80kl7ra5R02Yf3TGsHCP05+mnp1P9mzctdvKfl2se7cl6PbuaUqX+U1zzplF86f6u18KqdndTvTHaC+2+tK1ltjTM5xf8hWqHbkbV8VNdYfWcl0b5Ul/yeRHxcSz8J7TY+0UcySRc0WTQLVYlCMsks0vVfSBaXDFXSRM9ShPk/+7JP7Qa57LkSm/3S2n34QBqOpXYGq93iQ/akHfeprY6FOHByXyXrdPdM+fqO+Frm40ok7l8MwmVX8JeI1XEpzn//4Q7soG4aRATBUdh/GUQoKIDP73cPd+DNXrfVgmpSfF2u22tQd62a5lqPT2enjYWU8tXnmLBip6ite2MeJKk+l/RuaUidFGTdXESwBT9WqQ2ZnfzvLri1ei6oVi2owdFPXAiaWYNaWrLaEBquXvFr8cKLfGQIUFgGb8vVEv5ObhmDi/jhMBt7q6AdROhEbH8LtqBgQTZTFIMHh3BKqCmH35ID1C2pIzIp0IgVSkVPBNCgpsGCBo7WoYn4BKMcNwuho4bvC6YFbttaMsLeadtsaQTs+/ftUuBRad2xawI40m67FNgIcxoZKRxay6EOTXo6iRK0BTRgOViHRj/V6wQEU75h+Xe7HA2wTErYFjDsWz45YBESRhi8oedbhqq2gIK3AzylagoZScC2Rdh1gd3aZgoZSc5tAYVlEiyz5ylkJAGmVnDprXb5HmtjUl6+Ay+vQi8/iYGlFVwF4GoIlnpyQFhdcPiBIdMSONcKCCEKu16wLXaxNiYFjLBgaat2+fM5c8BVMEBc0wbu9PMFVsA6DyWEQaOJYlcUwJIBJQdT5PnsmBCapjf1jx+86Aeeb7d0CGrQ881h8XSjNcjw5GDMJFFlgJZQocVnnALCPKWCu89nxq5AHSLC61NpkE1Hc2Dyz9/GHWYbHclmgqGS2e3UpONRQlbOLVFASD8gQ7vBzNR4PHnHXl/j/+TRf6Z6yEeeFF5jrAtNB8QNfg/syXiOkGhwvh6znuGv5PnMTd10HNE3WN7VmzphFDMNsINuKtegEcU+6sui/miNIWVExVyPVExXo15Ay5yfNSTbXAjgSTvRrCWkjonp9xExjeB032gIYn8JI2gQ6qmQXk3o4E5Mdvl6uANYCpPckIozFnKUry9iYguVHqUMlrOYS9ulchavSPIWL2RYtp2WvEUsl20vVU5kGJtIX16AJf3Fstq9yNBEyljyEugs63eJAmXYKNG5MT0IsMZnkYsvJw7xxVuCmwDLxRNftR2kSZKJDfeA1S6l08BAYxEHV/KAxm2bVLHfv4QxPaylCez7tdBj50uqclo3DUQ+7uK08uZ1/n128NK8I3HUzFPvUFd25t7qROQp6w0+2hUtV98v3rprV5r90ayzB3qptOfM2SN8A3cnH2JLE3b/ry4GOgaXfMihn8GyiYJxPkUcMBEk6/ct7n/h6095bfJBOAo6SPTswgh6fhDdk+E/iL5w6LGg5vMeH7DPctS3GgBFoQy/FujgqxnpUb6o/+tC97UMSXGPjVKXSvww7rUMNSV1MYZw1QV5jUYUT3PmZ3v4ZSNViF02YnthhV9kMtHVJDeEy2HIiXh4qsthGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZ5Lf4BzBBG3wxkqG8AAAAASUVORK5CYII="
+            alt="">
+    </div>
     <header class="header">
         <div class="container">
             <div class="row">
@@ -31,9 +38,7 @@
                         <span>info@freshnesecom.com</span>
                     </div>
                     <div class="header__top--right">
-                        <a href="">Blog</a>
-                        <a href="">About Us</a>
-                        <a href="">Careers</a>
+                        <a href="#">Về chúng tôi</a>
                     </div>
                 </div>
             </div>
@@ -42,431 +47,110 @@
                     <a href=""><img src="img/logo.svg" alt="logo"></a>
                 </div>
                 <div class="search ">
-                    <a href="#">All categories <i class="demo-icon icon-down-dir"></i></a>
                     <div class="search-container">
                         <form>
                             <input type="text" placeholder="Search Products, categories ..." name="search">
-
                         </form>
                         <button type="submit"><i class="demo-icon icon-search"></i></button>
                     </div>
                 </div>
                 <div class="icons ">
                     <a href=""><i class="demo-icon icon-adult"></i></a>
-                    <a href=""><i class="demo-icon icon-shopping-basket"></i><span class="number-basket">4</span></a>
+                    <a href=""><i class="demo-icon icon-shopping-basket"></i></a>
                 </div>
             </div>
-            <div class="row">
-                <nav class="nav">
-                    <ul>
-                        <li>
-                            <a href="">Bakery <i class="demo-icon icon-down-dir"></i></a>
-                        </li>
-                        <li>
-                            <a href="">Fruit and vegetables <i class="demo-icon icon-down-dir"></i></a>
-                        </li>
-                        <li>
-                            <a href="">Meat and fish <i class="demo-icon icon-down-dir"></i></a>
-                        </li>
-                        <li>
-                            <a href="">Drinks <i class="demo-icon icon-down-dir"></i></a>
-                        </li>
-                        <li>
-                            <a href="">Kitchen <i class="demo-icon icon-down-dir"></i></a>
-                        </li>
-                        <li>
-                            <a href="">Special nutrition <i class="demo-icon icon-down-dir"></i></a>
-                        </li>
-                        <li>
-                            <a href="">Baby <i class="demo-icon icon-down-dir"></i></a>
-                        </li>
-                        <li>
-                            <a href="">Pharmacy <i class="demo-icon icon-down-dir"></i></a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+
         </div>
     </header>
-    <nav id="breadcrumbs" class="breadcrumbs">
-        <div class="container page-wrapper">
-            <a href="index.html">Home / </a> <span class="breadcrumb_last" aria-current="page"> Fruit and
-                vegetables</span>
-        </div>
-    </nav>
     <main class="product-detail">
         <div class="container">
-            <div class="row product-detail__wrap">
-                <div class="col-lg-6 product-detail__left">
-                    <div class="img">
-                        <img src="img/top-left.jpg" alt="">
-                        <div class="percent">
-                            <span class="percent">- 36 %</span>
-                            <span>Free shiping</span>
+            <div class="row">
+                <section class="col-lg-5 product-detail__left">
+                    <div class="product-img">
+                        <img src="https://tinhlamjw.com/wp-content/uploads/2021/01/MM-web-009.jpg" alt="">
+                        <div id="open-modal" class="open-modal">
+                            <i class="demo-icon icon-search"></i>
                         </div>
-                    </div>
-                    <div class="img">
-                        <img src="img/top-left.jpg" alt="">
-                    </div>
-                    <div class="img">
-                        <img src="img/top-left.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 product-detail__right">
-                    <h2>Carrots from Tomissy Farm</h2>
-                    <div class="card-rating">
-                        <i class="demo-icon icon-star start-cl"></i>
-                        <i class="demo-icon icon-star start-cl"></i>
-                        <i class="demo-icon icon-star start-cl"></i>
-                        <i class="demo-icon icon-star start-cl"></i>
-                        <i class="demo-icon icon-star "></i>
-                        <span class="small-des">(1 customer review)</span>
-                    </div>
-                    <p class="des">Carrots from Tomissy Farm are one of the best on the market. Tomisso and his family
-                        are giving a full love to his Bio products. Tomisso’s carrots are growing on the fields
-                        naturally.</p>
-                    <table class="spec">
-                        <tr>
-                            <th>SKU:</th>
-                            <td>76645</td>
-                            <th>Freshness:</th>
-                            <td>1 days old</td>
-                        </tr>
-                        <tr>
-                            <th>Category:</th>
-                            <td>Vegetables</td>
-                            <th>Buy by:</th>
-                            <td>pcs, kgs, box, pack</td>
-                        </tr>
-                        <tr>
-                            <th>Stock:</th>
-                            <td>In Stock</td>
-                            <th>Delivery:</th>
-                            <td>in 2 days</td>
-                        </tr>
-                        <tr>
-                            <th>Farm</th>
-                            <td>Grocery Tarm Fields</td>
-                            <th>Delivery area</th>
-                            <td>Czech republic</td>
-                        </tr>
-                    </table>
-                    <div class="add-cart">
-                        <div class="add-cart__price">
-                            <span class="price">
-                                36.99 USD
-                            </span>
-                            <span class="sale-price">
-                                48.56
-                            </span>
-                        </div>
-                        <div class="quantity">
-                            <input type="number" min="1" max="100" step="1" value="1">
-                            <span>Pcs</span>
-                        </div>
-
-                        <div class="btn-filter">
-                            <a href="#" class="main-btn">
-                                <i>+</i>
-                                <span>Add to cart</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="wish-list">
-                        <i class="demo-icon icon-heart-empty"></i>
-                        <span>Add to my wish list</span>
                     </div>
 
-                    <div class="tab-content">
-                        <div class="tabs">
-                            <ul id="tabs__ul">
-                                <li class="active" data-list="tab_1">
-                                    <p>Description</p>
-                                </li>
-                                <li data-list="tab_2">
-                                    <p>Reviews</p>
-                                    <span class="select-filter">320</span>
-                                </li>
-                                <li data-list="tab_3">
-                                    <p>Questions</p>
-                                    <span class="select-filter">320</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="content">
-                            <div class="tab_content tab_1" id="tab_1">
-                                <h3 class="title">
-                                    Origins
-                                </h3>
-                                <p class="des">We work hard to ensure that the fruit and vegetables we sell are fresh and high in quality. If we don’t grow them ourselves, we source them from carefully chosen suppliers, preferring to buy locally whenever possible.
-                                </p>
-                                <h3 class="title">
-                                    How to cook
-                                </h3>
-                                <p class="des">From roasts, salads and soups to casseroles and cakes, Carrots will lend sweetness, texture and colour to an enormous number of recipes.</p>
-                                <h3 class="title">
-                                    Full of Vitamins!
-                                </h3>
-                                <table>
-                                    <tr>
-                                        <th>Vitamins</th>
-                                        <th>Quantity</th>
-                                        <th>% DV</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Vitamin A equiv.</td>
-                                        <td>735 μg</td>
-                                        <td>104 %</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Thiamine (B1)</td>
-                                        <td>0.066 mg</td>
-                                        <td>6 %</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Niacin (B3)</td>
-                                        <td>0.983 mg</td>
-                                        <td>7 %</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Folate (Bg)</td>
-                                        <td>19 μg</td>
-                                        <td>5 %</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Vitamin C</td>
-                                        <td>5.9 mg</td>
-                                        <td>7 %</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Vitamin E</td>
-                                        <td>0.66 mg</td>
-                                        <td>4 %</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Vitamin K</td>
-                                        <td>13.2</td>
-                                        <td>13 %</td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="tab_content tab_2" id="tab_2" style="display:none;">
-                                
-                            </div>
-                            <div class="tab_content tab_3" id="tab_3" style="display:none;">
-                               
-                            </div>
+                </section>
+                <section class="col-lg-5 product-detail__right">
+                    <div class="product-name">
+                        <h1 class="title">VÒNG SERAPHINITE</h1>
+                    </div>
+                    <div class="product-infor">
+                        <h3>
+                            Nội dung sản phẩm:
+                        </h3>
+                        <div class="contact">
+                            <span>Liên hê: 190000000</span>
                         </div>
                     </div>
-                </div>
-
-            </div>
-            <div class="row related-products">
-                <div class="text">
-                    <h3>Related products</h3>
-                    <a href="">More products <i>></i></a>
-                </div>
-                <div class="related-products__wrap category__right">
-                    
-                    <div class="category-card ">
-                        <div class="card-img ">
-                            <a href=""><img src="img/bot1.png" alt=""></a>
-                            <span class="percent">- 36 %</span>
-                        </div>
-                        <div class="card-infor ">
-                            <div class="card-infor__left">
-                                <h2 class="title">
-                                    Product title
-                                </h2>
-                                <span class="small-des">Space for a small product description </span>
-                                
-                            </div>
-                            <div class="card-infor__right">
-                                <span class="price">
-                                    36.99 USD
-                                </span>
-                                <span class="sale-price">
-                                    48.56
-                                </span>
-                
-                                <div class="btn-filter">
-                                    <a href="#" class="main-btn">
-                                        <span>Buy now</span>
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="category-card ">
-                        <div class="card-img ">
-                            <a href=""><img src="img/bot1.png" alt=""></a>
-                            <span class="percent">- 36 %</span>
-                        </div>
-                        <div class="card-infor ">
-                            <div class="card-infor__left">
-                                <h2 class="title">
-                                    Product title
-                                </h2>
-                                <span class="small-des">Space for a small product description </span>
-                                
-                            </div>
-                            <div class="card-infor__right">
-                                <span class="price">
-                                    36.99 USD
-                                </span>
-                                <span class="sale-price">
-                                    48.56
-                                </span>
-                
-                                <div class="btn-filter">
-                                    <a href="#" class="main-btn">
-                                        <span>Buy now</span>
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="category-card ">
-                        <div class="card-img ">
-                            <a href=""><img src="img/bot1.png" alt=""></a>
-                            <span class="percent">- 36 %</span>
-                        </div>
-                        <div class="card-infor ">
-                            <div class="card-infor__left">
-                                <h2 class="title">
-                                    Product title
-                                </h2>
-                                <span class="small-des">Space for a small product description </span>
-                                
-                            </div>
-                            <div class="card-infor__right">
-                                <span class="price">
-                                    36.99 USD
-                                </span>
-                                <span class="sale-price">
-                                    48.56
-                                </span>
-                
-                                <div class="btn-filter">
-                                    <a href="#" class="main-btn">
-                                        <span>Buy now</span>
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="category-card ">
-                        <div class="card-img ">
-                            <a href=""><img src="img/bot1.png" alt=""></a>
-                            <span class="percent">- 36 %</span>
-                        </div>
-                        <div class="card-infor ">
-                            <div class="card-infor__left">
-                                <h2 class="title">
-                                    Product title
-                                </h2>
-                                <span class="small-des">Space for a small product description </span>
-                                
-                            </div>
-                            <div class="card-infor__right">
-                                <span class="price">
-                                    36.99 USD
-                                </span>
-                                <span class="sale-price">
-                                    48.56
-                                </span>
-                
-                                <div class="btn-filter">
-                                    <a href="#" class="main-btn">
-                                        <span>Buy now</span>
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+                </section>
             </div>
         </div>
     </main>
-
     <footer class="footer">
         <div class="container">
-
             <div class="row">
-                <div class="footer__wrap">
-
-                    <div class="col-lg-6 footer__left">
-                        <div class="logo">
-                            <a href=""><img src="img/logo.svg" alt="logo"></a>
-
-                        </div>
-                        <p>We earned a reputation of being good at what we do.</p>
-                        <p>Let us take your online shop to new dimension in
-                            success!</p>
-                        <div class="place">
-                            <i class="demo-icon icon-target"></i>
-                            <p>Comilla, Bangladesh 3500</p>
-                        </div>
-                        <div class="social">
-                            <span>kawsarahmed0210@gmail.com</span>
-                            <span>01647470457</span>
-                            <div class="social__icons">
-                                <a href=""><i class="demo-icon icon-facebook"></i></a>
-                                <a href=""><i class="demo-icon icon-instagram"></i></a>
-                                <a href=""><i class="demo-icon icon-twitter"></i></a>
-                                <a href=""><i class="demo-icon icon-linkedin-squared"></i></a>
-                            </div>
-                        </div>
+                <div class=" footer__wrap">
+                    <div>
+                        <h3>CHĂM SÓC KHÁCH HÀNG</h3>
+                        <a href="/">Trung Tâm Trợ Giúp</a>
+                        <a href="/">Hướng Dẫn Mua Hàng</a>
+                        <a href="/">Hướng Dẫn Bán Hàng</a>
+                        <a href="/">Thanh Toán</a>
                     </div>
-                    <div class="col-lg-6 footer__right">
-                        <div class="email col-lg-12">
-                            <h3>RECIVE EMAIL UPDATES</h3>
-                            <div class="search-container">
-                                <form>
-                                    <input type="text" placeholder="Search.." name="search">
-
-                                </form>
-                                <a href="#">Join</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <a href="">
-                                <h3>Shop</h3>
-                            </a>
-                            <a href="">Shop</a>
-                            <a href="">Collection</a>
-                            <a href="">Outlet</a>
-                            <a href="">Lookbook</a>
-                        </div>
-                        <div class="col-lg-4">
-                            <a href="">
-                                <h3>HELP</h3>
-                            </a>
-                            <a href="">FAQ</a>
-                            <a href="">Privecy Policy</a>
-                            <a href="">Tearms and conditions</a>
-                            <a href="">Return and Exchanges</a>
-                        </div>
-                        <div class="col-lg-4">
-                            <a href="">
-                                <h3>About</h3>
-                            </a>
-                            <a href="">Journal</a>
-                            <a href="">Our Story</a>
-                            <a href="">Contact</a>
-                            <a href="">Store Location</a>
-                        </div>
+                    <div>
+                        <h3>VỀ CHÚNG TÔI</h3>
+                        <a href="/">Giới Thiệu Về Chúng Tôi</a>
+                        <a href="/">Tuyển Dụng</a>
+                        <a href="/">Điều khoản</a>
                     </div>
+                    <div>
+                        <h3>THEO DÕI CHÚNG TÔI TRÊN</h3>
+                        <a href="/">
+                            <i class="demo-icon icon-facebook"></i> Facebook
+                        </a>
+                        <a href="/">
+                            <i class="demo-icon icon-twitter"></i> Twitter
+                        </a>
+                        <a href="/">
+                            <i class="demo-icon icon-instagram"></i>
+                            Instagram
+                        </a>
+                    </div>
+                    <div>
+                        <h3>THANH TOÁN</h3>
+                        <a href="/">Visa</a>
+                        <a href="/">Master Card</a>
+                        <a href="/">ZaloPay</a>
+                        <a href="/">MoMo</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="copyright col-lg-12">
+                    <p>© 2021 Myshop. Tất cả các quyền được bảo lưu.</p>
+                    <p>Quốc gia & Khu vực: Singapore Indonesia Đài Loan Thái Lan Malaysia Việt Nam Philippines
+                        Brazil</p>
                 </div>
             </div>
         </div>
-
     </footer>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+
+            <div class="product-img">
+                <img src="https://tinhlamjw.com/wp-content/uploads/2021/01/MM-web-009.jpg" alt="">
+                <span class="close">&times;</span>
+            </div>
+        </div>
+
+    </div>
 
     <script type="text/javascript" src="dest/jsmain.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
