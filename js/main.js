@@ -23,10 +23,10 @@ var mySwiper = new Swiper(".swiper-container", {
   // scrollbar: {
   //   el: '.swiper-scrollbar',
   // },
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
+  // autoplay: {
+  //   delay: 2500,
+  //   disableOnInteraction: false,
+  // },
 });
 
 function stopPropagation(e) {
