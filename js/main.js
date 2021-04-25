@@ -28,7 +28,22 @@ var mySwiper = new Swiper(".swiper-container", {
   //   disableOnInteraction: false,
   // },
 });
-
+// header change color
+$(document).ready(function () {
+  function menuTop() {
+    if (window.location.pathname === "/") {
+      if ($(this).scrollTop() >= 200) {
+        $(".header").addClass("active");
+      } else {
+        $(".header").removeClass("active");
+      }
+    } else {
+      $(".header").addClass("active");
+    }
+  }
+  menuTop();
+  $(window).scroll(menuTop);
+});
 function stopPropagation(e) {
   e.stopPropagation();
 }
