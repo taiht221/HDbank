@@ -37,6 +37,10 @@ $(document).ready(function () {
   }
   menuTop();
   $(window).scroll(menuTop);
+  $(".hamburger").on("click", function () {
+    $(".hamburger").toggleClass("active");
+    $(".menu-right").toggleClass("active");
+  });
 });
 // loading screen
 $(window).on("load", function () {
