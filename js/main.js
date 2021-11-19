@@ -1,31 +1,29 @@
-// header change color
+// todo
+
+var swiper = new Swiper('.mySwiper', {
+  slidesPerView: 1,
+  spaceBetween: 5,
+  freeMode: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+})
 
 $(document).ready(function () {
-  var count_particles, update
-  count_particles = document.querySelector('.js-count-particles')
-  update = function () {
-    requestAnimationFrame(update)
-  }
-  requestAnimationFrame(update)
-})
-// todo
-$(document).ready(function () {
   function menuTop() {
-    if (window.location.pathname === '/' && window.location.search === '') {
-      if ($(this).scrollTop() >= 200) {
-        $('.header').addClass('active')
-      } else {
-        $('.header').removeClass('active')
-      }
-    } else {
+    if ($(this).scrollTop() >= 200) {
       $('.header').addClass('active')
+    } else {
+      $('.header').removeClass('active')
     }
   }
   menuTop()
   $(window).scroll(menuTop)
   $('.hamburger').on('click', function () {
     $('.hamburger').toggleClass('active')
-    $('.menu-right').toggleClass('active')
+    $('.navbar').toggleClass('active')
+    $('.homepage,.footer').toggle()
   })
 })
 // loading screen

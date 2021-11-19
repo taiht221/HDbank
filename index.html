@@ -5,330 +5,262 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Tài Hòa</title>
-    <meta name="title" content="" />
-    <meta name="description" content="" />
-    <meta property="og:locale" content="vi" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Trang chủ" />
-    <meta property="og:description" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:site_name" content="" />
-    <meta property="og:image" content="" />
-    <link rel="icon" href="img/taihoa-logo.svg" />
+    <title>HD Bank</title>
+    <link rel="shortcut icon" type="image/png" href="https://hdbank.com.vn/static/image/favicon.ico">
     <link rel="stylesheet" href="dest/stylelibs.min.css">
     <link rel="stylesheet" href="dest/style.min.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <div id="preloder">
-        <div class="loader"></div>
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAMAAABlApw1AAAAdVBMVEX///8CAgMJCQoeHh/u7u7V1dX6+vrh4eF9fX25ublhYWG/v796enoXFxhoaGgZGRohISKsrKyJiYqVlZadnZ709PRdXV10dHQ9PT5OTk/FxcU4ODmmpqe1tbUlJSbf398uLi9HR0hWVlfMzMwxMTKOjo9JSUovc1ulAAAFzElEQVR4nO2c7XayMAyAJyDfHyoCypyKc7v/S3yVuQlpGsprAT0nz09balrSJk1D394YhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmEYhmGYF8FZhv52czQNIzlutn64dBRqJ4ZhKtQeGttzt9FMIPp2A6x64H5jtbeuZ48t+Y88MSLOL0lRtmuXRSKvHcVoj4dkXphyeX5YhH/q4YSLrtpmMR9T/FOXPDVGXHfBiQ2l6qexujDPleS5dUFV/Cv5GF2wfGV56i6oi3/Ft4aWf0nMXB1Ey0HFt9S157/JB3wJXufSowPTG0r+1RjiX1kNI38xlvyzWTGA+Lba2q+Jk3bvwtqMKf9sttE8le33jj80kl7ra5R02Yf3TGsHCP05+mnp1P9mzctdvKfl2se7cl6PbuaUqX+U1zzplF86f6u18KqdndTvTHaC+2+tK1ltjTM5xf8hWqHbkbV8VNdYfWcl0b5Ul/yeRHxcSz8J7TY+0UcySRc0WTQLVYlCMsks0vVfSBaXDFXSRM9ShPk/+7JP7Qa57LkSm/3S2n34QBqOpXYGq93iQ/akHfeprY6FOHByXyXrdPdM+fqO+Frm40ok7l8MwmVX8JeI1XEpzn//4Q7soG4aRATBUdh/GUQoKIDP73cPd+DNXrfVgmpSfF2u22tQd62a5lqPT2enjYWU8tXnmLBip6ite2MeJKk+l/RuaUidFGTdXESwBT9WqQ2ZnfzvLri1ei6oVi2owdFPXAiaWYNaWrLaEBquXvFr8cKLfGQIUFgGb8vVEv5ObhmDi/jhMBt7q6AdROhEbH8LtqBgQTZTFIMHh3BKqCmH35ID1C2pIzIp0IgVSkVPBNCgpsGCBo7WoYn4BKMcNwuho4bvC6YFbttaMsLeadtsaQTs+/ftUuBRad2xawI40m67FNgIcxoZKRxay6EOTXo6iRK0BTRgOViHRj/V6wQEU75h+Xe7HA2wTErYFjDsWz45YBESRhi8oedbhqq2gIK3AzylagoZScC2Rdh1gd3aZgoZSc5tAYVlEiyz5ylkJAGmVnDprXb5HmtjUl6+Ay+vQi8/iYGlFVwF4GoIlnpyQFhdcPiBIdMSONcKCCEKu16wLXaxNiYFjLBgaat2+fM5c8BVMEBc0wbu9PMFVsA6DyWEQaOJYlcUwJIBJQdT5PnsmBCapjf1jx+86Aeeb7d0CGrQ881h8XSjNcjw5GDMJFFlgJZQocVnnALCPKWCu89nxq5AHSLC61NpkE1Hc2Dyz9/GHWYbHclmgqGS2e3UpONRQlbOLVFASD8gQ7vBzNR4PHnHXl/j/+TRf6Z6yEeeFF5jrAtNB8QNfg/syXiOkGhwvh6znuGv5PnMTd10HNE3WN7VmzphFDMNsINuKtegEcU+6sui/miNIWVExVyPVExXo15Ay5yfNSTbXAjgSTvRrCWkjonp9xExjeB032gIYn8JI2gQ6qmQXk3o4E5Mdvl6uANYCpPckIozFnKUry9iYguVHqUMlrOYS9ulchavSPIWL2RYtp2WvEUsl20vVU5kGJtIX16AJf3Fstq9yNBEyljyEugs63eJAmXYKNG5MT0IsMZnkYsvJw7xxVuCmwDLxRNftR2kSZKJDfeA1S6l08BAYxEHV/KAxm2bVLHfv4QxPaylCez7tdBj50uqclo3DUQ+7uK08uZ1/n128NK8I3HUzFPvUFd25t7qROQp6w0+2hUtV98v3rprV5r90ayzB3qptOfM2SN8A3cnH2JLE3b/ry4GOgaXfMihn8GyiYJxPkUcMBEk6/ct7n/h6095bfJBOAo6SPTswgh6fhDdk+E/iL5w6LGg5vMeH7DPctS3GgBFoQy/FujgqxnpUb6o/+tC97UMSXGPjVKXSvww7rUMNSV1MYZw1QV5jUYUT3PmZ3v4ZSNViF02YnthhV9kMtHVJDeEy2HIiXh4qsthGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZ5Lf4BzBBG3wxkqG8AAAAASUVORK5CYII="
-            alt="">
-    </div>
     <header class="header">
         <div class="container">
             <div class="row ">
                 <div class="header__wrap">
+                    <div class="hamburger">
+                        <div></div>
+                    </div>
                     <div class="logo ">
-                        <a href="/"><img src="img/taihoa-white.svg" alt="logo"></a>
+                        <a href="/"><img src="img/hd-icon.png" alt="logo"></a>
                     </div>
                     <div class="navbar">
                         <ul class="header__navbar">
                             <li>
-                                <a href="/">Trang chủ</a>
+                                <a href="/">Bemax</a>
                             </li>
                             <li>
-                                <a href="about.html">Về chúng tôi</a>
+                                <a href="about.html">eAccount</a>
+                            </li>
+                            <li>
+                                <a href="about.html">Mở Tài Khoản Online</a>
                             </li>
                         </ul>
                     </div>
-
-                    <div class="search ">
-                        <div class="search-container">
-                            <form>
-                                <input type="text" placeholder="Tìm kiếm sản phẩm..." name="search">
-                            </form>
-                            <button type="submit"><i class="demo-icon icon-search"></i></button>
-                        </div>
-                    </div>
-                    <div class="hamburger">
-                        <div></div>
-                    </div>
-                </div>
-                <div class="header__mobile">
-
-                    <div class="menu-right">
-
-                        <ul>
-                            <li>
-                                <a href="/">Trang chủ</a>
-                            </li>
-                            <li>
-                                <a href="about.html">Về chúng tôi</a>
-                            </li>
-                        </ul>
-                        <div class="search ">
-                            <div class="search-container">
-                                <form>
-                                    <input type="text" placeholder="Tìm kiếm sản phẩm..." name="search">
-                                </form>
-                                <button type="submit"><i class="demo-icon icon-search"></i></button>
-                            </div>
-                        </div>
+                    <div class="register-btn">
+                        <a href="">Đăng ký ngay</a>
                     </div>
                 </div>
             </div>
         </div>
-
     </header>
     <main class="homepage">
         <div class="banner">
             <div class="container-fluid">
                 <div class="row">
                     <div class="banner__img">
-                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/about-us-1.jpg" alt="">
+                        <img src="img/KV BEMAX.png" alt="" class="lazyload">
                     </div>
                 </div>
             </div>
         </div>
-
-
-
         <div class="container">
             <div class="row">
-                <div class="col-lg-9 homepage__left">
-
-                    <div class="new-products">
-
-                        <div class="title">
-                            <h2>Sản phẩm mới</h2>
-                        </div>
-                        <div class="details">
-                            <div class="details__card">
-                                <a href="/product-detail.html" alt="">
-                                    <div class="details__card--img">
-                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
-                                            alt="VÒNG ĐÁ AQUAMARINE">
-                                        <i class="demo-icon icon-search"></i>
-
-                                    </div>
-                                </a>
-
-                                <div class="details__card--infor">
-                                    <h3>
-                                        <a href="/product-detail.html" alt="">
-                                            Vòng đá mặt trăng
-                                        </a>
-                                    </h3>
-                                    <span class="label">
-                                        Xem chi tiết
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="details__card">
-                                <a href="/product-detail.html" alt="">
-                                    <div class="details__card--img">
-                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
-                                            alt="VÒNG ĐÁ AQUAMARINE">
-                                        <i class="demo-icon icon-search"></i>
-
-                                    </div>
-                                </a>
-
-                                <div class="details__card--infor">
-                                    <h3>
-                                        <a href="/product-detail.html" alt="">
-                                            Vòng đá mặt trăng
-                                        </a>
-                                    </h3>
-                                    <span class="label">
-                                        Xem chi tiết
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="details__card">
-                                <a href="/product-detail.html" alt="">
-                                    <div class="details__card--img">
-                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
-                                            alt="VÒNG ĐÁ AQUAMARINE">
-                                        <i class="demo-icon icon-search"></i>
-
-                                    </div>
-                                </a>
-
-                                <div class="details__card--infor">
-                                    <h3>
-                                        <a href="/product-detail.html" alt="">
-                                            Vòng đá mặt trăng
-                                        </a>
-                                    </h3>
-                                    <span class="label">
-                                        Xem chi tiết
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="details__card">
-                                <a href="/product-detail.html" alt="">
-                                    <div class="details__card--img">
-                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
-                                            alt="VÒNG ĐÁ AQUAMARINE">
-                                        <i class="demo-icon icon-search"></i>
-
-                                    </div>
-                                </a>
-
-                                <div class="details__card--infor">
-                                    <h3>
-                                        <a href="/product-detail.html" alt="">
-                                            Vòng đá mặt trăng
-                                        </a>
-                                    </h3>
-                                    <span class="label">
-                                        Xem chi tiết
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="details__card">
-                                <a href="/product-detail.html" alt="">
-                                    <div class="details__card--img">
-                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
-                                            alt="VÒNG ĐÁ AQUAMARINE">
-                                        <i class="demo-icon icon-search"></i>
-
-                                    </div>
-                                </a>
-
-                                <div class="details__card--infor">
-                                    <h3>
-                                        <a href="" alt="">
-                                            Vòng đá mặt trăng
-                                        </a>
-                                    </h3>
-                                    <span class="label">
-                                        Xem chi tiết
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="details__card">
-                                <a href="" alt="">
-                                    <div class="details__card--img">
-                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
-                                            alt="VÒNG ĐÁ AQUAMARINE">
-                                        <i class="demo-icon icon-search"></i>
-
-                                    </div>
-                                </a>
-
-                                <div class="details__card--infor">
-                                    <h3>
-                                        <a href="" alt="">
-                                            Vòng đá mặt trăng
-                                        </a>
-                                    </h3>
-                                    <span class="label">
-                                        Xem chi tiết
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="details__card">
-                                <a href="" alt="">
-                                    <div class="details__card--img">
-                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
-                                            alt="VÒNG ĐÁ AQUAMARINE">
-                                        <i class="demo-icon icon-search"></i>
-
-                                    </div>
-                                </a>
-
-                                <div class="details__card--infor">
-                                    <h3>
-                                        <a href="" alt="">
-                                            Vòng đá mặt trăng
-                                        </a>
-                                    </h3>
-                                    <span class="label">
-                                        Xem chi tiết
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="details__card">
-                                <a href="" alt="">
-                                    <div class="details__card--img">
-                                        <img src="https://tinhlamjw.com/wp-content/uploads/2020/09/Aquamarine-SP000203-2.jpg"
-                                            alt="VÒNG ĐÁ AQUAMARINE">
-                                        <i class="demo-icon icon-search"></i>
-
-                                    </div>
-                                </a>
-
-                                <div class="details__card--infor">
-                                    <h3>
-                                        <a href="" alt="">
-                                            Vòng đá mặt trăng
-                                        </a>
-                                    </h3>
-                                    <span class="label">
-                                        Xem chi tiết
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pagination">
-                            <a href="#">&laquo;</a>
-                            <a href="#">1</a>
-                            <a class="active" href="#">2</a>
-                            <a href="#">3</a>
-                            <a href="#">4</a>
-                            <a href="#">5</a>
-                            <a href="#">6</a>
-                            <a href="#">&raquo;</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 homepage__right">
-                    <div class="author-card">
-                        <div id="particles-js"></div> <!-- stats - count particles -->
-                        <div class="welcome">
-                            <span>歡</span>
-                            <span>迎</span>
-                        </div>
-
-
+                <section class="col-lg-12 bemax">
+                    <h1 class="title">Tài khoản Tối đa lợi ích - HDBank BeMax</h1>
+                    <p class="title-descript">CHUYỂN TIỀN THẢ GA, CHẲNG LO TRẢ PHÍ cùng HDBank BeMax với nhiều ưu đãi
+                        phí dành cho Doanh nghiệp
+                        khi sử dụng tài khoản để thực hiện giao dịch thường xuyên, đặc biệt là chọn giao dịch trên kênh
+                        giao dịch trực tuyến của HDBank.</p>
+                    <div class="register-btn">
+                        <a href="">Xem thêm</a>
                     </div>
 
+                </section>
+            </div>
+        </div>
+        <div class="banner">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="banner__img">
+                        <img src="img/banner2.png" alt="" class="lazyload">
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row">
+                <section class="col-lg-12 bemax">
+                    <h2 class="title">eAccount-Tài khoản trực tuyến</h2>
+                    <p class="title-descript">MỌI KHOẢNG CÁCH KHÔNG CÒN LÀ GIỚI HẠN với "eAccount-Tài khoản doanh nghiệp
+                        trực tuyến HDBank", giải pháp số hóa giúp Quý doanh nghiệp hoàn tất nhanh việc mở tài khoản
+                        thanh toán, đáp ứng kịp thời nhu cầu hoạt động kinh doanh ngay mà không cần phải đến quầy giao
+                        dịch của ngân hàng.</p>
+                    <div class="register-btn">
+                        <a href="">Xem thêm</a>
+                    </div>
 
+                </section>
+            </div>
+        </div>
+        <div class="note">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="note-title">
+                        <h2>CÁC ĐIỂM LƯU Ý KHI MỞ TÀI KHOẢN ONLINE</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="note-wrap">
+                    <div class="note-card col-lg-4 col-xs-12">
+                        <img src="img/img-02.jpg" alt="thiết bị" class="card-img">
+                        <h3>Thiết bị</h3>
+                        <div class="register-btn">
+                            <a href="">xem thêm</a>
+                        </div>
+                    </div>
+                    <div class="note-card col-lg-4 col-xs-12">
+                        <img src="img/img-04.jpg" alt="hồ sơ cần lưu sẵn trong máy tính" class="card-img">
+                        <h3>Hồ sơ cần lưu sẵn<br>trong máy tính</h3>
+                        <div class="register-btn">
+                            <a href="">xem thêm</a>
+                        </div>
+                    </div>
+                    <div class="note-card col-lg-4 col-xs-12">
+                        <img src="img/img-06.jpg" alt="yêu cầu chất lượng hồ sơ" class="card-img">
+                        <h3>yêu cầu<br>chất lượng hồ sơ</h3>
+                        <div class="register-btn">
+                            <a href="">xem thêm</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="note-card col-lg-4 swiper-slide">
+                            <img src="img/img-02.jpg" alt="thiết bị" class="card-img">
+                            <h3>Thiết bị</h3>
+                            <div class="register-btn">
+                                <a href="">xem thêm</a>
+                            </div>
+                        </div>
+                        <div class="note-card col-lg-4 swiper-slide">
+                            <img src="img/img-04.jpg" alt="hồ sơ cần lưu sẵn trong máy tính" class="card-img">
+                            <h3>Hồ sơ cần lưu sẵn<br>trong máy tính</h3>
+                            <div class="register-btn">
+                                <a href="">xem thêm</a>
+                            </div>
+                        </div>
+                        <div class="note-card col-lg-4 swiper-slide">
+                            <img src="img/img-06.jpg" alt="yêu cầu chất lượng hồ sơ" class="card-img">
+                            <h3>yêu cầu<br>chất lượng hồ sơ</h3>
+                            <div class="register-btn">
+                                <a href="">xem thêm</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
     </main>
     <footer class="footer">
+        <div class="footer-img">
+            <img src="img/foteer.jpg" alt="">
+        </div>
         <div class="container">
-            <div class="row">
-                <div class=" footer__wrap">
-                    <div class="logo">
-                        <a href="/"><img src="img/taihoa-logo.svg" alt="logo"></a>
-                    </div>
-                    <div class="address">
-                        <p><b>Địa chỉ:</b><span>117/12b Đỗ Ngọc Thạnh P.12 Q.5 HCM</span>
-                        </p>
-                        <p><b>Điện thoại:</b><span>0969.917.420</span></p>
-                        <p><b>Email:</b><span>12345@gmail.com</span></p>
+            <div class="row footer-wrap">
+                <div class="footer__title">
+                    <h2 class="title">ĐĂNG KÝ TƯ VẤN</h2>
+                    <p class="title-descript">HDBank sẽ liên hệ lại với Quý khách
+                        trong khoảng thời gian sớm nhất.</p>
+
+                </div>
+                <div class="register-box">
+                    <form action="#">
+                        <label for="company-name">Thông tin doanh nghiệp</label>
+                        <div class="row-eq-height">
+                            <input type="text" name="company-name" placeholder="Tên Công ty">
+                            <input type="text" name="company-id" placeholder="Mã số thuế (*)">
+                        </div>
+                        <label for="fullname">Thông tin người liên hệ</label>
+                        <div class="row-eq-height">
+                            <input type="text" name="fullname" placeholder="Họ & Tên (*)">
+                            <input type="text" name="email" placeholder="Email">
+                            <input type="text" name="phone-number" placeholder="Số điện thoại (*)">
+                        </div>
+                        <label for="service">Sản phẩm/ dịch vụ quan tâm cần trao đổi</label>
+                        <div class="row-eq-height">
+                            <select id="service" name="service">
+                                <option value="Bemax">Bemax</option>
+                                <option value="Bemax">Bemax</option>
+                                <option value="Bemax">Bemax</option>
+                            </select>
+                            <input type="text" name="diff" placeholder="Khác">
+                        </div>
+                        <p>(*) Thông tin bắt buộc điền</p>
+                        <input type="submit" value="Gửi thông tin" class="register-btn">
+                    </form>
+                    <div class="coin-left"><img src="img/coin-left.png" alt=""></div>
+                    <div class="coin-right"><img src="img/coin.png" alt=""></div>
+                </div>
+                <div class="address">
+                    <p>HỘI SỞ NGÂN HÀNG TMCP PHÁT TRIỂN<br>
+                        THÀNH PHỐ HỒ CHÍ MINH
+                    </p>
+                    <div class="address-infor">
+                        <div class="address-item1">
+                            <div class="row-eq-height"><img src="img/place.png" alt="" class="icon">
+                                <p>25Bis Nguyễn Thị Minh Khai, Quận 1, TPHCM</p>
+                            </div>
+                            <div class="row-eq-height">
+                                <p class="row-eq-height" style="margin-right: 20px;"><img src="img/phone-call.png"
+                                        alt="" class="icon"> 028 -
+                                    62915916</p>
+                                <p class="row-eq-height"><img src="img/printer.png" alt="" class="icon">028 - 62915900
+                                </p>
+                            </div>
+                            <div class="row-eq-height"><img src="img/at.png" alt="" class="icon">
+                                <p>info@hdbank.com.vn</p>
+                            </div>
+                            <div class="row-eq-height"><img src="img/web.png" alt="" class="icon">
+                                <p>www.hdbank.com.vn</p>
+                            </div>
+                        </div>
+                        <div class="address-item2">
+                            <div class="row-eq-height"><a href="" style="margin-right: 20px;">Trang chủ</a><a
+                                    href="">Liên hệ</a></div>
+                            <div><a href="">
+                                    Sản phẩm khách hàng doanh nghiệp</a></div>
+                            <div><a href="">
+                                    Kết nối với HDBank</a></div>
+                            <div class="row-eq-height"><a href=""><img src="img/facebook.png" alt="" class="icon"></a>
+                                <a href=""><img src="img/youtube.png" alt="" class="icon"></a>
+                                <a href=""><img src="img/linkedin.png" alt="" class="icon"></a>
+                            </div>
+                        </div>
+                        <div class="address-item3">
+                            <p>Ứng dụng di động</p>
+                            <a href="">
+                                <img src="img/Layer-509.jpg" alt=""></a>
+                            <a href=""><img src="img/Layer-510.jpg" alt=""></a>
+                        </div>
                     </div>
                 </div>
-
-            </div>
-            <div class="row">
                 <div class="copyright col-lg-12">
-                    <p>© 2021 Myshop. Tất cả các quyền được bảo lưu.</p>
+                    <p>Copyright © 2020 HDBank</p>
                 </div>
             </div>
         </div>
     </footer>
+    <div id="myModal" class="modal">
 
+        <!-- Modal content -->
+        <div class="modal-content">
+
+            <div class="product-img">
+                <img src="https://tinhlamjw.com/wp-content/uploads/2021/01/MM-web-009.jpg" alt="">
+                <span class="close">&times;</span>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="dest/jsmain.min.js"></script>
-
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 
