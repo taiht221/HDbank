@@ -26,37 +26,33 @@ $(document).ready(function () {
     $('.homepage,.footer').toggle()
   })
 })
-// loading screen
-$(window).on('load', function () {
-  $('#preloder').fadeOut(2000)
-})
-// Get the modal
-var modal = document.getElementById('myModal') || ''
 
-// Get the button that opens the modal
-var btn = document.getElementById('open-modal') || ''
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName('close')[0] || ''
-
-// When the user clicks the button, open the modal
-btn.onclick = function () {
-  modal.style.display = 'block'
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-  modal.style.display = 'none'
-}
-modal.onclick = function () {
-  modal.style.display = 'none'
-}
-document.addEventListener('keydown', function (event) {
-  if (event.key === 'Escape') {
-    modal.style.display = 'none'
+$(document).ready(function () {
+  var showBTN = $('.show-btn')
+  for (var i = 0; i < showBTN.length; i++) {
+    showBTN[i].onclick = showModal
   }
-})
-$('.product-img').click(function (event) {
-  event.stopPropagation()
-  // Do something
+  function showModal(e) {
+    e.preventDefault()
+    // get the hex color
+    var modalNumber = e.target.getAttribute('data-src')
+    var close = $('.close')
+    // update src of image
+    document.getElementById(modalNumber).style.display = 'flex'
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        document.getElementById(modalNumber).style.display = 'none'
+      }
+    })
+    close.on('click', function () {
+      document.getElementById(modalNumber).style.display = 'none'
+    })
+  }
+  $(document).on('click', '.pick .color', function () {
+    $(this).addClass('color-active').siblings().removeClass('color-active')
+  })
+
+  $('.product-img').click(function (event) {
+    event.stopPropagation()
+  })
 })
