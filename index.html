@@ -135,21 +135,21 @@
                             <img src="img/img-02.jpg" alt="thiết bị" class="card-img">
                             <h3>Thiết bị</h3>
                             <div class="register-btn">
-                                <a href="">xem thêm</a>
+                                <a href="" data-src="modal3" class="show-btn">xem thêm</a>
                             </div>
                         </div>
                         <div class="note-card col-lg-4 swiper-slide">
                             <img src="img/img-04.jpg" alt="hồ sơ cần lưu sẵn trong máy tính" class="card-img">
                             <h3>Hồ sơ cần lưu sẵn<br>trong máy tính</h3>
                             <div class="register-btn">
-                                <a href="">xem thêm</a>
+                                <a href="" data-src="modal4" class="show-btn">xem thêm</a>
                             </div>
                         </div>
                         <div class="note-card col-lg-4 swiper-slide">
                             <img src="img/img-06.jpg" alt="yêu cầu chất lượng hồ sơ" class="card-img">
                             <h3>yêu cầu<br>chất lượng hồ sơ</h3>
                             <div class="register-btn">
-                                <a href="">xem thêm</a>
+                                <a href="" data-src="modal5" class="show-btn">xem thêm</a>
                             </div>
                         </div>
                     </div>
@@ -171,29 +171,41 @@
 
                 </div>
                 <div class="register-box">
-                    <form action="#">
+                    <form action="#" id="register-form">
+                        <span class="er-phone">Số điện thoại đã được đăng kí vui lòng nhập lại !!!</span>
                         <label for="company-name">Thông tin doanh nghiệp</label>
                         <div class="row-eq-height">
-                            <input type="text" name="company-name" placeholder="Tên Công ty">
-                            <input type="text" name="company-id" placeholder="Mã số thuế (*)">
+                            <div>
+                                <input type="text" name="company-name" placeholder="Tên Công ty">
+                            </div>
+                            <div>
+                                <input type="text" name="company-id" placeholder="Mã số thuế (*)"
+                                    onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                            </div>
                         </div>
                         <label for="fullname">Thông tin người liên hệ</label>
                         <div class="row-eq-height">
-                            <input type="text" name="fullname" placeholder="Họ & Tên (*)">
-                            <input type="text" name="email" placeholder="Email">
-                            <input type="text" name="phone-number" placeholder="Số điện thoại (*)">
+                            <div><input type="text" name="fullname" placeholder="Họ & Tên (*)"></div>
+                            <div><input type="text" name="email" placeholder="Email"></div>
+                            <div>
+                                <input type="text" name="phone-number" placeholder="Số điện thoại (*)"
+                                    onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+                            </div>
                         </div>
                         <label for="service">Sản phẩm/ dịch vụ quan tâm cần trao đổi</label>
                         <div class="row-eq-height">
                             <select id="service" name="service">
-                                <option value="Bemax">Bemax</option>
-                                <option value="Bemax">Bemax</option>
-                                <option value="Bemax">Bemax</option>
+                                <option value="Tài Khoản tối đa lợi ích - BeMax">Tài Khoản tối đa lợi ích - BeMax
+                                </option>
+                                <option value="e.Account – Mở TKDN trực tuyến">e.Account – Mở TKDN trực tuyến</option>
+                                <option value="Tài khoản – Tiền gửi">Tài khoản – Tiền gửi</option>
+                                <option value="Vay">Vay</option>
+                                <option value="eBanking">eBanking</option>
                             </select>
-                            <input type="text" name="diff" placeholder="Khác">
+                            <input type="text" name="other" placeholder="Khác">
                         </div>
                         <p>(*) Thông tin bắt buộc điền</p>
-                        <input type="submit" value="Gửi thông tin" class="register-btn">
+                        <input type="submit" value="Gửi thông tin" class="register-btn" id="register-btn">
                     </form>
                     <div class="coin-left"><img src="img/coin-left.png" alt=""></div>
                     <div class="coin-right"><img src="img/coin.png" alt=""></div>
@@ -395,6 +407,8 @@
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="dest/jsmain.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript"
+        src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
 </body>
 
 </html>
